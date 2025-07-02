@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('../services/databaseService');
 
@@ -103,8 +103,20 @@ const getProfile = async (req, res) => {
   }
 };
 
+// Obtener todos los usuarios
+const getUsers = async (req, res) => {
+  try {
+    const users = await db.getAllUsers(); // Asegúrate de que databaseService tenga esta función
+    res.json(users);
+  } catch (error) {
+    console.error('Error obteniendo usuarios:', error);
+    res.status(500).json({ error: 'Error al obtener usuarios' });
+  }
+};
+
 module.exports = {
   register,
   login,
-  getProfile
+  getProfile,
+  getUsers
 };
