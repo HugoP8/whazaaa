@@ -139,6 +139,11 @@ class DatabaseService {
     const query = 'UPDATE whatsapp_sessions SET is_active = $1 WHERE user_id = $2';
     await pool.query(query, [isActive, userId]);
   }
+
+  async getAllUsers() {
+  const result = await pool.query('SELECT id, email, name FROM public.users');
+  return result.rows;
+}
 }
 
 module.exports = new DatabaseService();
