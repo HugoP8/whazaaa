@@ -1,0 +1,27 @@
+# Ignorar node_modules
+node_modules/
+
+# Ignorar package-lock.json (opcional, si no quieres versionarlo)
+# package-lock.json
+
+# Ignorar archivos de entorno
+.env
+
+# Ignorar archivos binarios o temporales
+*.log
+*.tmp
+
+# Ignorar carpetas de compilación o temporales
+build/
+dist/
+
+# Ignorar archivos de IDEs (VS Code, etc.)
+.vscode/
+*.code-workspace
+
+# Ignorar archivos generados por npm o yarn
+npm-debug.log*
+yarn-error.log*
+
+# Ignorar uploads si es una carpeta temporal
+uploads/
